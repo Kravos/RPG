@@ -1,0 +1,11 @@
+C:\Users\Ammar\RiderProjects\RPG\bin\Debug\netcoreapp3.1\RPG.exe
+C:\Users\Ammar\RiderProjects\RPG\bin\Debug\netcoreapp3.1\RPG.deps.json
+C:\Users\Ammar\RiderProjects\RPG\bin\Debug\netcoreapp3.1\RPG.runtimeconfig.json
+C:\Users\Ammar\RiderProjects\RPG\bin\Debug\netcoreapp3.1\RPG.runtimeconfig.dev.json
+C:\Users\Ammar\RiderProjects\RPG\bin\Debug\netcoreapp3.1\RPG.dll
+C:\Users\Ammar\RiderProjects\RPG\bin\Debug\netcoreapp3.1\RPG.pdb
+C:\Users\Ammar\RiderProjects\RPG\obj\Debug\netcoreapp3.1\RPG.csprojAssemblyReference.cache
+C:\Users\Ammar\RiderProjects\RPG\obj\Debug\netcoreapp3.1\RPG.AssemblyInfoInputs.cache
+C:\Users\Ammar\RiderProjects\RPG\obj\Debug\netcoreapp3.1\RPG.AssemblyInfo.cs
+C:\Users\Ammar\RiderProjects\RPG\obj\Debug\netcoreapp3.1\RPG.dll
+C:\Users\Ammar\RiderProjects\RPG\obj\Debug\netcoreapp3.1\RPG.pdb
