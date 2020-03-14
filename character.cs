@@ -5,7 +5,7 @@ namespace RPG
     public class Character
     {
         public string Nickname;
-        public string Class;
+        public string Race;
         public int Money;
         public int HealthPoints;
         public int DefensePoints;
@@ -16,15 +16,15 @@ namespace RPG
 
         public void Creation()
         {
-            Console.WriteLine("Your character information:\n" );
+            Console.WriteLine("\nYour character information:\n" );
             Console.WriteLine("Name: "+ Nickname);
-            Console.WriteLine("Class: "+ Class);
-            Console.WriteLine("Money: "+ Money);
+            Console.WriteLine("Race: "+ Race);
+            Console.WriteLine("Money: "+ Money + "$");
             Console.WriteLine("HealthPoints: "+ HealthPoints);
             Console.WriteLine("DefensePoints: "+ DefensePoints);
             Console.WriteLine("Strength: "+ Strength);
             Console.WriteLine("Dodge: "+ Dodge);
-            Console.WriteLine("Level: "+ Level + "Experience: "+ Experience +"%");
+            Console.WriteLine("Level: "+ Level + " (Experience: "+ Experience +"%)");
         }
     }
 }
