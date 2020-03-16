@@ -21,21 +21,23 @@ namespace RPG
             //Menu
             Console.WriteLine(
                 "Welcome to my RPG\n\n ---- Menu ----\n Enter one of the following options:\n'create' - to create a new character.\n'exit' - to leave.");
-            
-            var menuInput = Console.ReadLine();
-            CommandType resultCommand;
-            while (Enum.TryParse(menuInput, true, out resultCommand))
+            bool repeatMenu = true;
+            while (repeatMenu)
             {
+                var menuInput = Console.ReadLine();
                 menuInput = menuInput.ToLower();
+                CommandType resultCommand;
                 Enum.TryParse(menuInput, true, out resultCommand);
                 switch (resultCommand)
                 {
                     case CommandType.Create:
+                        repeatMenu = false;
                         break;
                     case CommandType.Exit:
                         return;
                     default:
                         Console.WriteLine("Please use one of the given menu options.");
+                        repeatMenu = true;
                         break;
                 }    
             }
@@ -50,26 +52,35 @@ namespace RPG
             player.Nickname = nicknameInput;
             
             //race
-            Console.WriteLine("Please enter your race. Choose from Human, Monster or Mystic.");
-            var raceInput = Console.ReadLine();
-            raceInput = raceInput.ToUpper();
-            RaceType resultRace;
-            Enum.TryParse(raceInput, true, out resultRace);
-            switch (resultRace)
+            bool repeatRaceInput = true;
+            while (repeatRaceInput)
             {
-                case RaceType.Human:
-                    player.Race = "Human";
-                    break;
-                case RaceType.Monster:
-                    player.Race = "Monster";
-                    break;
-                case RaceType.Mystic:
-                    player.Race = "Mystic";
-                    break;
-                default:
-                    Console.WriteLine("Please enter a valid race");
-                    return;
+                Console.WriteLine("Please enter your race. Choose from Human, Monster or Mystic.");
+                var raceInput = Console.ReadLine();
+                raceInput = raceInput.ToUpper();
+                RaceType resultRace;
+                Enum.TryParse(raceInput, true, out resultRace);
+                switch (resultRace)
+                {
+                    case RaceType.Human:
+                        player.Race = "Human";
+                        repeatRaceInput = false;
+                        break;
+                    case RaceType.Monster:
+                        player.Race = "Monster";
+                        repeatRaceInput = false;
+                        break;
+                    case RaceType.Mystic:
+                        player.Race = "Mystic";
+                        repeatRaceInput = false;
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid race");
+                        repeatRaceInput = true;
+                        break;
+                }  
             }
+           
             
             player.Creation();
             //New object of Rival
