@@ -1,5 +1,5 @@
 ﻿using System;
-using static RPG.Character;
+
 
 namespace RPG
 {
