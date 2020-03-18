@@ -29,7 +29,6 @@ namespace RPG
             Console.WriteLine("Strength: " + Strength);
             Console.WriteLine("Dodge: " + Dodge);
             Console.WriteLine("Stage Multiplier: " + Multiplier);
-
             Console.WriteLine("Please enter your stage multiplier (min: 1 max: 100):  ");
             var multiplierInput = Console.ReadLine();
             int parsedMultiplierInput;
