@@ -88,6 +88,8 @@ namespace RPG
             
             enemy.RivalInfo();
             Console.WriteLine("Stage Multiplier set to: " + enemy.Multiplier);
+
+            Fight.fight(player.HealthPoints, enemy.HealthPoints, player.DefensePoints, enemy.DefensePoints, player.Strength, enemy.Strength, player.Dodge, enemy.Dodge, player.Nickname, enemy.Rivalname);
         }
     }
 }    
