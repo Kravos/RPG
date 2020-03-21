@@ -17,9 +17,10 @@ namespace RPG
             this.HealthPoints = 1500;
             this.DefensePoints = 500;
             this.Strength = 50;
-            this.Dodge = 1;
+            this.Dodge = 20;
             this.Multiplier = 1;
         }
+
         public void RivalInfo()
         {
             Console.WriteLine("\nRival information:\n");
@@ -34,20 +35,21 @@ namespace RPG
             int parsedMultiplierInput;
             if (multiplierInput != null)
             {
-               parsedMultiplierInput = Int32.Parse(multiplierInput);
-               if (parsedMultiplierInput >0 && parsedMultiplierInput <= 100)
-               {
-                   Multiplier = parsedMultiplierInput;
-               }
-               else
-               {
-                   return;
-               }
-               
+                parsedMultiplierInput = Int32.Parse(multiplierInput);
+                if (parsedMultiplierInput > 0 && parsedMultiplierInput <= 100)
+                {
+                    Multiplier = parsedMultiplierInput;
+                }
+                else
+                {
+                    return;
+                }
             }
-            
+        }
 
+        public void Multiply()
+        {
+            
         }
     }
 }
-
