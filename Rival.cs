@@ -33,17 +33,15 @@ namespace RPG
             Console.WriteLine("Please enter your stage multiplier (min: 1 max: 100):  ");
             var multiplierInput = Console.ReadLine();
             int parsedMultiplierInput;
-            if (multiplierInput != null)
+            if (multiplierInput == null) return;
+            parsedMultiplierInput = int.Parse(multiplierInput);
+            if (parsedMultiplierInput > 0 && parsedMultiplierInput <= 100)
             {
-                parsedMultiplierInput = Int32.Parse(multiplierInput);
-                if (parsedMultiplierInput > 0 && parsedMultiplierInput <= 100)
-                {
-                    Multiplier = parsedMultiplierInput;
-                }
-                else
-                {
-                    return;
-                }
+                Multiplier = parsedMultiplierInput;
+            }
+            else
+            {
+                return;
             }
         }
 
