@@ -46,7 +46,7 @@ namespace RPG
 
 
             //New object of Character
-            var player = new Character("", "");
+            var player = new Character();
             //Nickname
             Console.WriteLine("Please enter your Nickname:");
             var nicknameInput = Console.ReadLine();
