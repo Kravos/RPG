@@ -31,7 +31,7 @@ namespace RPG
             
         }
 
-        public void Creation()
+        public void CharacterStats()
         {
             Console.WriteLine("\nYour character information:\n");
             Console.WriteLine("Name: " + Nickname);

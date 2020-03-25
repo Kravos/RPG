@@ -14,11 +14,11 @@ namespace RPG
         public Rival(string Rivalname)
         {
             this.Rivalname = Rivalname;
-            this.HealthPoints = 1500;
-            this.DefensePoints = 500;
-            this.Strength = 50;
-            this.Dodge = 20;
-            this.Multiplier = 1;
+            HealthPoints = 1500;
+            DefensePoints = 500;
+            Strength = 50;
+            Dodge = 20;
+            Multiplier = 1;
         }
 
         public void RivalInfo()

@@ -5,32 +5,31 @@ namespace RPG
 {
     public class Fight
     {
-        public static void fight(int PlayerHP, int RivalHP, int PlayerDP, int RivalDP, int PlayerStrength,
-            int RivalStrength,
-            int PlayerDodge, int RivalDodge, string PlayerName, string RivalName, int PlayerMoney)
+        public static void Fighting(Character player, Rival enemy)
         {
-            PlayerHP = PlayerHP + PlayerDP / 2;
-            RivalHP = RivalHP + RivalDP / 2;
+            player.HealthPoints += player.DefensePoints / 2;
+            enemy.HealthPoints += enemy.DefensePoints / 2;
 
             Random DodgeRand = new Random();
-            while (PlayerHP > 0 && RivalHP > 0)
+            while (player.HealthPoints > 0 && enemy.HealthPoints > 0)
             {
                 var RandomDodge = DodgeRand.Next(0, 100);
-                if (RandomDodge > RivalDodge)
+                if (RandomDodge > enemy.Dodge)
                 {
-                    RivalHP = RivalHP - PlayerStrength;
-                    Console.WriteLine("\nUpdated stats:\n Your HP: " + PlayerHP + "\n Rival HP: " + RivalHP);
+                    enemy.HealthPoints -= player.Strength;
+                    Console.WriteLine("\nUpdated stats:\n Your HP: " + player.HealthPoints + "\n Rival HP: " +
+                                      enemy.HealthPoints);
                 }
                 else
                 {
                     Console.WriteLine("\nYour Rival dodged the attack.");
-
                 }
 
-                if (RandomDodge > PlayerDodge)
+                if (RandomDodge > player.Dodge)
                 {
-                    PlayerHP = PlayerHP - RivalStrength;
-                    Console.WriteLine("\nUpdated stats:\n Your HP: " + PlayerHP + "\n Rival HP: " + RivalHP);
+                    player.HealthPoints -= enemy.Strength;
+                    Console.WriteLine("\nUpdated stats:\n Your HP: " + player.HealthPoints + "\n Rival HP: " +
+                                      enemy.HealthPoints);
                 }
                 else
                 {
@@ -38,24 +37,24 @@ namespace RPG
                 }
 
 
-                if (RivalHP <= 0)
+                if (enemy.HealthPoints <= 0)
                 {
-                    Console.WriteLine(PlayerName + " defeated " + RivalName + "! GG\n");
-                    PlayerMoney += 100;
-                    Console.WriteLine(PlayerName + " earned " + PlayerMoney + "$!");
+                    Console.WriteLine(player.Nickname + " defeated " + enemy.Rivalname + "! GG\n");
+                    player.Money += 100;
+                    Console.WriteLine(player.Nickname + " earned " + player.Money + "$!");
                 }
-                else if (PlayerHP <= 0)
+                else if (player.HealthPoints <= 0)
                 {
-                    Console.WriteLine(PlayerName + " got defeated by " + RivalName + "! Noob.");
+                    Console.WriteLine(player.Nickname + " got defeated by " + enemy.Rivalname + "! Noob.");
                 }
 
-                Thread.Sleep(500);
+                //Thread.Sleep(500);
             }
         }
 
-        public static void Fight2(Character characterParameters)
+        public static void Fight2(Character player)
         {
-            
+            Console.WriteLine(player.Money);
         }
     }
 }
