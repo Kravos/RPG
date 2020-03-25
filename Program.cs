@@ -61,7 +61,6 @@ namespace RPG
             enemy.RivalInfo();
             Console.WriteLine("Stage Multiplier set to: " + enemy.Multiplier);
             Fight.Fighting(player, enemy);
-            Fight.Fight2(player);
         }
     }
 }

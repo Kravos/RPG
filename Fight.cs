@@ -51,10 +51,5 @@ namespace RPG
                 //Thread.Sleep(500);
             }
         }
-
-        public static void Fight2(Character player)
-        {
-            Console.WriteLine(player.Money);
-        }
     }
 }
