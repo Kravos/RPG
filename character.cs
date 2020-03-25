@@ -6,26 +6,29 @@ namespace RPG
     {
         public string Nickname;
         public string Race;
-        public int Money;
-        public int HealthPoints;
-        public int DefensePoints;
-        public int Strength;
-        public int Dodge;
-        public int Level;
-        public int Experience;
+        public int Money { get; set;  }
+        public int HealthPoints { get; set; }
+        public int DefensePoints { get; set; }
+        public int Strength { get; set; }
+        public int Dodge { get; set; }
+        public int Level { get; set; }
+        public int Experience { get; set; }
 
 
-        public Character(string Nickname, string Race)
+        public Character()
         {
-            this.Nickname = Nickname;
-            this.Race = Race;
-            this.Money = 0;
-            this.HealthPoints = 1000;
-            this.DefensePoints = 1000;
-            this.Strength = 100;
-            this.Dodge = 20;
-            this.Level = 1;
-            this.Experience = 0;
+            Money = 0;
+            HealthPoints = 1000;
+            DefensePoints = 1000;
+            Strength = 100;
+            Dodge = 20;
+            Level = 1;
+            Experience = 0;
+        }
+       
+        public void Fight2(Character characterParameters)
+        {
+            
         }
 
         public void Creation()
