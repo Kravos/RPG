@@ -5,11 +5,11 @@ namespace RPG
     public class Rival
     {
         public string Rivalname;
-        public int HealthPoints;
-        public int DefensePoints;
-        public int Strength;
-        public int Dodge;
-        public int Multiplier;
+        public int HealthPoints { get; set; }
+        public int DefensePoints { get; set; }
+        public int Strength { get; set; }
+        public int Dodge { get; set; }
+        public int Multiplier { get; set; }
 
         public Rival(string Rivalname)
         {
