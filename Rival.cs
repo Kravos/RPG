@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 
 namespace RPG
 {
@@ -41,13 +42,20 @@ namespace RPG
             }
             else
             {
-                return;
+                Multiplier = 1;
             }
         }
 
-        public void Multiply()
+        public void Multiply(Rival enemy)
         {
-            
+            enemy.HealthPoints *= Multiplier;
+            enemy.Strength *= Multiplier;
+            enemy.DefensePoints *= Multiplier;
+            enemy.Dodge += Multiplier;
+            if (enemy.Dodge >= 100)
+            {
+                enemy.Dodge = 99;
+            }
         }
     }
 }
