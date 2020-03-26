@@ -11,6 +11,7 @@ namespace RPG
         public int Strength { get; set; }
         public int Dodge { get; set; }
         public int Multiplier { get; set; }
+        public int Reward { get; set; }
 
         public Rival(string Rivalname)
         {
@@ -20,6 +21,7 @@ namespace RPG
             Strength = 50;
             Dodge = 20;
             Multiplier = 1;
+            Reward = 100;
         }
 
         public void RivalInfo()
@@ -31,26 +33,14 @@ namespace RPG
             Console.WriteLine("Strength: " + Strength);
             Console.WriteLine("Dodge: " + Dodge);
             Console.WriteLine("Stage Multiplier: " + Multiplier);
-            Console.WriteLine("Please enter your stage multiplier (min: 1 max: 100):  ");
-            var multiplierInput = Console.ReadLine();
-            int parsedMultiplierInput;
-            if (multiplierInput == null) return;
-            parsedMultiplierInput = int.Parse(multiplierInput);
-            if (parsedMultiplierInput > 0 && parsedMultiplierInput <= 100)
-            {
-                Multiplier = parsedMultiplierInput;
-            }
-            else
-            {
-                Multiplier = 1;
-            }
         }
 
         public void Multiply(Rival enemy)
         {
             enemy.HealthPoints *= Multiplier;
-            enemy.Strength *= Multiplier;
             enemy.DefensePoints *= Multiplier;
+            enemy.Strength *= Multiplier;
+            enemy.Reward *= Multiplier;
             enemy.Dodge += Multiplier;
             if (enemy.Dodge >= 100)
             {
