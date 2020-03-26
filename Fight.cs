@@ -7,10 +7,25 @@ namespace RPG
     {
         public static void Fighting(Character player, Rival enemy)
         {
+            Console.WriteLine("\nPlease enter your stage multiplier (min: 1 max: 100):  ");
+            var multiplierInput = Console.ReadLine();
+            int parsedMultiplierInput;
+            if (multiplierInput == null) return;
+            parsedMultiplierInput = int.Parse(multiplierInput);
+            if (parsedMultiplierInput > 0 && parsedMultiplierInput <= 100)
+            {
+                enemy.Multiplier = parsedMultiplierInput;
+            }
+            else
+            {
+                enemy.Multiplier = 1;
+            }
+            Console.WriteLine("Stage Multiplier set to: " + enemy.Multiplier);
+            enemy.Multiply(enemy);
             player.HealthPoints += player.DefensePoints / 2;
             enemy.HealthPoints += enemy.DefensePoints / 2;
 
-            Random DodgeRand = new Random();
+            var DodgeRand = new Random();
             while (player.HealthPoints > 0 && enemy.HealthPoints > 0)
             {
                 var RandomDodge = DodgeRand.Next(0, 100);
@@ -39,8 +54,9 @@ namespace RPG
 
                 if (enemy.HealthPoints <= 0)
                 {
+                    
                     Console.WriteLine(player.Nickname + " defeated " + enemy.Rivalname + "! GG\n");
-                    player.Money += 100;
+                    player.Money += enemy.Reward;
                     Console.WriteLine(player.Nickname + " earned " + player.Money + "$!");
                 }
                 else if (player.HealthPoints <= 0)
@@ -50,6 +66,7 @@ namespace RPG
 
                 //Thread.Sleep(500);
             }
+            Menu.RepeatMenu(player, enemy);
         }
     }
 }
