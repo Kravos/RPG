@@ -25,11 +25,7 @@ namespace RPG
             Level = 1;
             Experience = 0;
         }
-       
-        public void Fight2(Character characterParameters)
-        {
-            
-        }
+        
 
         public void CharacterStats()
         {
