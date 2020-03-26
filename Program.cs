@@ -54,13 +54,15 @@ namespace RPG
                 }
             }
             player.CharacterStats();
-           
+            
             //New object of Rival
             var enemy = new Rival("Yo Mama");
 
             enemy.RivalInfo();
             Console.WriteLine("Stage Multiplier set to: " + enemy.Multiplier);
+            enemy.Multiply(enemy);
             Fight.Fighting(player, enemy);
         }
     }
 }
+
