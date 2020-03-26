@@ -3,7 +3,7 @@
 
 namespace RPG
 {
-    class Program
+    abstract class Program
     {
         public enum RaceType
         {
@@ -49,7 +49,6 @@ namespace RPG
                         break;
                     default:
                         Console.WriteLine("Please enter a valid race");
-                        repeatRaceInput = true;
                         break;
                 }
             }
@@ -59,10 +58,11 @@ namespace RPG
             var enemy = new Rival("Yo Mama");
 
             enemy.RivalInfo();
-            Console.WriteLine("Stage Multiplier set to: " + enemy.Multiplier);
-            enemy.Multiply(enemy);
+            //Console.WriteLine("Stage Multiplier set to: " + enemy.Multiplier);
+            //enemy.Multiply(enemy);
             Fight.Fighting(player, enemy);
         }
+        
     }
 }
 
