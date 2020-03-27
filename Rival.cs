@@ -8,13 +8,10 @@ namespace RPG
         public string Rivalname;
         private readonly int HpMax = 1500;
         private readonly int DpMax = 500;
-        private int _healthPoints;
+        private readonly int _healthPoints = 1500;
 
         public int HealthPoints
-        {
-            get { return _healthPoints * Multiplier; }
-            set { _healthPoints = value; }
-        }
+        { get; set; }
 
         private int _defensePoints;
 
@@ -53,7 +50,11 @@ namespace RPG
         public int Multiplier
         {
             get { return _multiplier; }
-            set { _multiplier = value; }
+            set
+            {
+                _multiplier = value;
+                HealthPoints = _healthPoints * _multiplier;
+            }
         }
 
         private int _reward;
