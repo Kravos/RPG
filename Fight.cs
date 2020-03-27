@@ -25,8 +25,7 @@ namespace RPG
             //enemy.Restore();
             player.HealthPoints += player.DefensePoints / 2;
             //enemy.FightStats();
-            enemy.RivalInfo();
-            Thread.Sleep(6000);
+            Thread.Sleep(1000);
             var DodgeRand = new Random();
             while (player.HealthPoints > 0 && enemy.HealthPoints > 0)
             {
@@ -66,8 +65,7 @@ namespace RPG
                     Console.WriteLine(player.Nickname + " got defeated by " + enemy.Rivalname + "! Noob.");
                 }
 
-                player.CharacterStats();
-                Thread.Sleep(3000);
+                //Thread.Sleep(500);
             }
 
             Menu.RepeatMenu(player, enemy);
