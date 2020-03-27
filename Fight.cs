@@ -21,10 +21,11 @@ namespace RPG
                 enemy.Multiplier = 1;
             }
             Console.WriteLine("Stage Multiplier set to: " + enemy.Multiplier);
-            enemy.Multiply(enemy);
+            //enemy.Multiply(enemy);
             player.HealthPoints += player.DefensePoints / 2;
             enemy.HealthPoints += enemy.DefensePoints / 2;
-
+            enemy.RivalInfo();
+            Thread.Sleep(6000);
             var DodgeRand = new Random();
             while (player.HealthPoints > 0 && enemy.HealthPoints > 0)
             {
