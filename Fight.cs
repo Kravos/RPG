@@ -20,10 +20,11 @@ namespace RPG
             {
                 enemy.Multiplier = 1;
             }
+
             Console.WriteLine("Stage Multiplier set to: " + enemy.Multiplier);
-            //enemy.Multiply(enemy);
+            //enemy.Restore();
             player.HealthPoints += player.DefensePoints / 2;
-            enemy.HealthPoints += enemy.DefensePoints / 2;
+            //enemy.FightStats();
             enemy.RivalInfo();
             Thread.Sleep(6000);
             var DodgeRand = new Random();
@@ -41,6 +42,7 @@ namespace RPG
                     Console.WriteLine("\nYour Rival dodged the attack.");
                 }
 
+                RandomDodge = DodgeRand.Next(0, 100);
                 if (RandomDodge > player.Dodge)
                 {
                     player.HealthPoints -= enemy.Strength;
@@ -55,7 +57,6 @@ namespace RPG
 
                 if (enemy.HealthPoints <= 0)
                 {
-                    
                     Console.WriteLine(player.Nickname + " defeated " + enemy.Rivalname + "! GG\n");
                     player.Money += enemy.Reward;
                     Console.WriteLine(player.Nickname + " earned " + player.Money + "$!");
@@ -65,8 +66,10 @@ namespace RPG
                     Console.WriteLine(player.Nickname + " got defeated by " + enemy.Rivalname + "! Noob.");
                 }
 
-                //Thread.Sleep(500);
+                player.CharacterStats();
+                Thread.Sleep(3000);
             }
+
             Menu.RepeatMenu(player, enemy);
         }
     }
