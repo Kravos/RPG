@@ -6,12 +6,62 @@ namespace RPG
     public class Rival
     {
         public string Rivalname;
-        public int HealthPoints { get; set; }
-        public int DefensePoints { get; set; }
-        public int Strength { get; set; }
-        public int Dodge { get; set; }
-        public int Multiplier { get; set; }
-        public int Reward { get; set; }
+
+        private int _healthPoints;
+
+        public int HealthPoints
+        {
+            get { return _healthPoints * Multiplier; }
+            set { _healthPoints = value; }
+        }
+
+        private int _defensePoints;
+
+        public int DefensePoints
+        {
+            get { return _defensePoints * Multiplier; }
+            set { _defensePoints = value; }
+        }
+
+        private int _strength;
+
+        public int Strength
+        {
+            get { return _strength * Multiplier; }
+            set { _strength = value; }
+        }
+
+        private int _dodge;
+
+        public int Dodge
+        {
+            get
+            {
+                if (_dodge >= 100)
+                {
+                    _dodge = 99;
+                }
+
+                return _dodge * Multiplier;
+            }
+            set { _dodge = value; }
+        }
+
+        private int _multiplier;
+
+        public int Multiplier
+        {
+            get { return _multiplier; }
+            set { _multiplier = value; }
+        }
+
+        private int _reward;
+
+        public int Reward
+        {
+            get { return _reward * Multiplier; }
+            set { _reward = value; }
+        }
 
         public Rival(string Rivalname)
         {
@@ -35,7 +85,7 @@ namespace RPG
             Console.WriteLine("Stage Multiplier: " + Multiplier);
         }
 
-        public void Multiply(Rival enemy)
+        /* public void Multiply(Rival enemy)
         {
             enemy.HealthPoints *= Multiplier;
             enemy.DefensePoints *= Multiplier;
@@ -46,6 +96,6 @@ namespace RPG
             {
                 enemy.Dodge = 99;
             }
-        }
+        } */
     }
 }
