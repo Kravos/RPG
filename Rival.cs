@@ -6,7 +6,8 @@ namespace RPG
     public class Rival
     {
         public string Rivalname;
-
+        private readonly int HpMax = 1500;
+        private readonly int DpMax = 500;
         private int _healthPoints;
 
         public int HealthPoints
@@ -66,14 +67,26 @@ namespace RPG
         public Rival(string Rivalname)
         {
             this.Rivalname = Rivalname;
-            HealthPoints = 1500;
-            DefensePoints = 500;
+            Restore();
             Strength = 50;
             Dodge = 20;
             Multiplier = 1;
             Reward = 100;
         }
 
+        public void Restore()
+        {
+            HealthPoints = HpMax;
+            DefensePoints = DpMax;
+        }
+
+        /*public void FightStats()
+        {
+            HealthPoints = HpMax;
+            DefensePoints = DpMax;
+            HealthPoints += DefensePoints / 2;
+            HealthPoints *= Multiplier;
+        }*/
         public void RivalInfo()
         {
             Console.WriteLine("\nRival information:\n");
@@ -84,18 +97,5 @@ namespace RPG
             Console.WriteLine("Dodge: " + Dodge);
             Console.WriteLine("Stage Multiplier: " + Multiplier);
         }
-
-        /* public void Multiply(Rival enemy)
-        {
-            enemy.HealthPoints *= Multiplier;
-            enemy.DefensePoints *= Multiplier;
-            enemy.Strength *= Multiplier;
-            enemy.Reward *= Multiplier;
-            enemy.Dodge += Multiplier;
-            if (enemy.Dodge >= 100)
-            {
-                enemy.Dodge = 99;
-            }
-        } */
     }
 }
